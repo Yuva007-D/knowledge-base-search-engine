@@ -1,0 +1,50 @@
+import os
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
+class VectorStoreManager:
+    def __init__(self, persist_directory="./vector_store"):
+        self.persist_directory = persist_directory
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+        self.vector_store = None
+        
+    def create_vector_store(self, documents):
+        """Create Chroma vector store from documents"""
+        self.vector_store = Chroma.from_documents(
+            documents=documents,
+            embedding=self.embeddings,
+            persist_directory=self.persist_directory
+        )
+        return self.vector_store
+    
+    def load_vector_store(self):
+        """Load existing vector store"""
+        try:
+            self.vector_store = Chroma(
+                persist_directory=self.persist_directory,
+                embedding_function=self.embeddings
+            )
+            return self.vector_store
+        except Exception as e:
+            print(f"Error loading vector store: {e}")
+            return None
+    
+    def similarity_search(self, query, k=4):
+        """Perform similarity search"""
+        if self.vector_store:
+            return self.vector_store.similarity_search(query, k=k)
+        return []
+    
+    def get_retriever(self):
+        """Get retriever for RAG"""
+        if self.vector_store:
+            return self.vector_store.as_retriever(search_kwargs={"k": 4})
+        return None
+    
+    def get_document_count(self):
+        """Get number of documents in vector store"""
+        if self.vector_store:
+            return self.vector_store._collection.count()
+        return 0

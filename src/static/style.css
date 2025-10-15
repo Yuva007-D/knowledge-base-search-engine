@@ -1,0 +1,104 @@
+.main-header {
+    font-size: 3rem;
+    color: #1f77b4;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.sub-header {
+    font-size: 1.5rem;
+    color: #2e86ab;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.success-box {
+    padding: 1rem;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    color: #155724;
+}
+
+.info-box {
+    padding: 1rem;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    color: #0c5460;
+}
+
+.warning-box {
+    padding: 1rem;
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    color: #856404;
+}
+
+.answer-box {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid #1f77b4;
+    color: #333333;
+}
+
+.chat-message {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+    color: #333333;
+}
+
+.user-message {
+    background-color: #e7f3ff;
+    border-left: 4px solid #1f77b4;
+    color: #333333;
+}
+
+.assistant-message {
+    background-color: #f8f9fa;
+    border-left: 4px solid #28a745;
+    color: #333333;
+}
+
+.sidebar .sidebar-content {
+    background-color: #f8f9fa;
+}
+
+.stButton>button {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #1f77b4;
+    background-color: #1f77b4;
+    color: white;
+    font-weight: 500;
+}
+
+.stButton>button:hover {
+    background-color: #1668a3;
+    border-color: #1668a3;
+}
+
+/* Ensure all text is readable */
+body {
+    color: #333333 !important;
+}
+
+/* Fix Streamlit chat message colors */
+.stChatMessage {
+    color: #333333 !important;
+}
+
+/* Make sure input text is visible */
+.stTextInput>div>div>input {
+    color: #333333 !important;
+}
