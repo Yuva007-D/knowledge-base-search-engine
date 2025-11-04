@@ -6,5 +6,5 @@ python-dotenv
 requests
 sentence-transformers
 chromadb
-langchain>=0.0.200
-langchain-core
+langchain>=0.2.14
+langchain-core>=0.2.0
