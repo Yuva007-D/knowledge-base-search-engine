@@ -6,4 +6,4 @@ python-dotenv
 requests
 sentence-transformers
 chromadb
-langchain
+langchain>=0.0.200
