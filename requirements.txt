@@ -7,3 +7,4 @@ requests
 sentence-transformers
 chromadb
 langchain>=0.0.200
+langchain-core
